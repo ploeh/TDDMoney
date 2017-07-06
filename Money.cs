@@ -4,40 +4,40 @@
     {
         public Money(int amount, string currency)
         {
-            m_amount = amount;
-            m_currency = currency;
+            this.amount = amount;
+            this.currency = currency;
         }
 
         public override string ToString()
         {
-            return m_currency + " " + m_amount;
+            return currency + " " + amount;
         }
 
         public override bool Equals(object o)
         {
             Money money = (Money)o;
 
-            return m_amount == money.m_amount &&
-              m_currency == money.m_currency;
+            return amount == money.amount &&
+              currency == money.currency;
         }
 
         public override int GetHashCode()
         {
             return
-                m_amount.GetHashCode() ^
-                m_currency.GetHashCode();
+                amount.GetHashCode() ^
+                currency.GetHashCode();
         }
 
         public IExpression Times(int multiplier)
         {
-            return new Money(m_amount * multiplier, m_currency);
+            return new Money(amount * multiplier, currency);
         }
 
         public int Amount
         {
             get
             {
-                return m_amount;
+                return amount;
             }
         }
 
@@ -45,7 +45,7 @@
         {
             get
             {
-                return m_currency;
+                return currency;
             }
         }
 
@@ -66,11 +66,11 @@
 
         public Money Reduce(Bank bank, string to)
         {
-            int rate = bank.Rate(m_currency, to);
-            return new Money(m_amount / rate, to);
+            int rate = bank.Rate(currency, to);
+            return new Money(amount / rate, to);
         }
 
-        protected int m_amount;
-        protected string m_currency;
+        protected int amount;
+        protected string currency;
     }
 }
