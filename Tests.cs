@@ -2,10 +2,10 @@
 
 namespace TDDMoney
 {
-    public class With_Money
+    public class WithMoney
     {
         [Fact]
-        public void Currency_name()
+        public void CurrencyName()
         {
             Assert.Equal("USD", Money.Dollar(1).Currency);
             Assert.Equal("CHF", Money.Franc(1).Currency);
@@ -29,7 +29,7 @@ namespace TDDMoney
         }
 
         [Fact]
-        public void Simple_addition()
+        public void SimpleAddition()
         {
             Bank bank = new Bank();
             Money five = Money.Dollar(5);
@@ -40,7 +40,7 @@ namespace TDDMoney
         }
 
         [Fact]
-        public void Plus_should_return_Sum()
+        public void PlusShouldReturnSum()
         {
             Money five = Money.Dollar(5);
             IExpression result = five.Plus(five);
@@ -58,7 +58,7 @@ namespace TDDMoney
         }
 
         [Fact]
-        public void Reduce_different_currencies()
+        public void ReduceDifferentCurrencies()
         {
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
@@ -68,7 +68,7 @@ namespace TDDMoney
         }
 
         [Fact]
-        public void Mixed_addition()
+        public void MixedAddition()
         {
             IExpression fiveBucks = Money.Dollar(5);
             IExpression tenFrancs = Money.Franc(10);
@@ -80,9 +80,9 @@ namespace TDDMoney
         }
     }
 
-    public class With_Sum
+    public class WithSum
     {
-        public With_Sum()
+        public WithSum()
         {
             m_bank.AddRate("CHF", "USD", 2);
         }
@@ -96,7 +96,7 @@ namespace TDDMoney
         }
 
         [Fact]
-        public void Plus_Money()
+        public void PlusMoney()
         {
             IExpression sum = new Sum(m_fiveBucks, m_tenFrancs).Plus(m_fiveBucks);
             Money result = m_bank.Reduce(sum, "USD");
@@ -118,10 +118,10 @@ namespace TDDMoney
         private IExpression m_tenFrancs = Money.Franc(10);
     }
 
-    public class With_Bank
+    public class WithBank
     {
         [Fact]
-        public void Identity_rate_should_be_1()
+        public void IdentityRateShouldBe1()
         {
             Assert.Equal(1, new Bank().Rate("USD", "USD"));
         }
