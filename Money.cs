@@ -21,6 +21,13 @@
               m_currency == money.m_currency;
         }
 
+        public override int GetHashCode()
+        {
+            return
+                m_amount.GetHashCode() ^
+                m_currency.GetHashCode();
+        }
+
         public IExpression Times(int multiplier)
         {
             return new Money(m_amount * multiplier, m_currency);
