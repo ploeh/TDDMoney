@@ -19,7 +19,7 @@
             return (from + to).GetHashCode();
         }
 
-        private string from;
-        private string to;
+        private readonly string from;
+        private readonly string to;
     }
 }

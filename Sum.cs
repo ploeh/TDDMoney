@@ -30,7 +30,7 @@ namespace TDDMoney
             return new Sum(Augend.Times(multiplier), Addend.Times(multiplier));
         }
 
-        public IExpression Augend { get; set; }
-        public IExpression Addend { get; set; }
+        public IExpression Augend { get; }
+        public IExpression Addend { get; }
     }
 }

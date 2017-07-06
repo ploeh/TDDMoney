@@ -70,7 +70,7 @@
             return new Money(amount / rate, to);
         }
 
-        protected int amount;
-        protected string currency;
+        protected readonly int amount;
+        protected readonly string currency;
     }
 }
