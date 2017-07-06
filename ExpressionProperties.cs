@@ -30,6 +30,21 @@ namespace TDDMoney
                 new ExpressionEqualityComparer());
         }
 
+        [Property(QuietOnSuccess = true)]
+        public Property PlusHasIdentity()
+        {
+            return Prop.ForAll(
+                GenerateExpression().ToArbitrary(),
+                x => PlusHasIdentity(x));
+        }
+
+        private void PlusHasIdentity(IExpression x)
+        {
+            var comparer = new ExpressionEqualityComparer();
+            Assert.Equal(x, x.Plus(Plus.Identity), comparer);
+            Assert.Equal(x, Plus.Identity.Plus(x), comparer);
+        }
+
         private class ExpressionEqualityComparer : IEqualityComparer<IExpression>
         {
             private readonly Bank bank;

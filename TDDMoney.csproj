@@ -43,6 +43,7 @@
     <Compile Include="Bank.cs" />
     <Compile Include="CurrencyPair.cs" />
     <Compile Include="ExpressionProperties.cs" />
+    <Compile Include="Plus.cs" />
     <Compile Include="IExpression.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="MoneyTests.cs" />
