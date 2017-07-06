@@ -27,7 +27,7 @@ namespace TDDMoney
             Assert.Equal(
                 x.Plus(y).Plus(z),
                 x.Plus(y.Plus(z)),
-                new ExpressionEqualityComparer());
+                Compare.UsingBank);
         }
 
         [Property(QuietOnSuccess = true)]
@@ -40,32 +40,8 @@ namespace TDDMoney
 
         private void PlusHasIdentity(IExpression x)
         {
-            var comparer = new ExpressionEqualityComparer();
-            Assert.Equal(x, x.Plus(Plus.Identity), comparer);
-            Assert.Equal(x, Plus.Identity.Plus(x), comparer);
-        }
-
-        private class ExpressionEqualityComparer : IEqualityComparer<IExpression>
-        {
-            private readonly Bank bank;
-
-            public ExpressionEqualityComparer()
-            {
-                bank = new Bank();
-                bank.AddRate("CHF", "USD", 2);
-            }
-
-            public bool Equals(IExpression x, IExpression y)
-            {
-                var xm = bank.Reduce(x, "USD");
-                var ym = bank.Reduce(y, "USD");
-                return object.Equals(xm, ym);
-            }
-
-            public int GetHashCode(IExpression obj)
-            {
-                return bank.Reduce(obj, "USD").GetHashCode();
-            }
+            Assert.Equal(x, x.Plus(Plus.Identity), Compare.UsingBank);
+            Assert.Equal(x, Plus.Identity.Plus(x), Compare.UsingBank);
         }
 
         private static Gen<Money> GenerateMoney()

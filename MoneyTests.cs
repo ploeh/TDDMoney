@@ -21,8 +21,8 @@ namespace TDDMoney
         {
             Money dollarFive = Money.Dollar(5);
 
-            Assert.Equal(Money.Dollar(10), dollarFive.Times(2));
-            Assert.Equal(Money.Dollar(15), dollarFive.Times(3));
+            Assert.Equal(Money.Dollar(10), dollarFive.Times(2), Compare.UsingBank);
+            Assert.Equal(Money.Dollar(15), dollarFive.Times(3), Compare.UsingBank);
         }
 
         [Fact]

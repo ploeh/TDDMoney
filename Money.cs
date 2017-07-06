@@ -1,4 +1,6 @@
-﻿namespace TDDMoney
+﻿using System.Linq;
+
+namespace TDDMoney
 {
     public class Money : IExpression
     {
@@ -30,7 +32,9 @@
 
         public IExpression Times(int multiplier)
         {
-            return new Money(Amount * multiplier, Currency);
+            return Enumerable
+                .Repeat((IExpression)this, multiplier)
+                .Aggregate((x, y) => x.Plus(y));
         }
 
         public static Money Dollar(int amount)

@@ -41,7 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bank.cs" />
+    <Compile Include="Compare.cs" />
     <Compile Include="CurrencyPair.cs" />
+    <Compile Include="ExpressionEqualityComparer.cs" />
     <Compile Include="ExpressionProperties.cs" />
     <Compile Include="Plus.cs" />
     <Compile Include="IExpression.cs" />

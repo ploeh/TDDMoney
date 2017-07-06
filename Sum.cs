@@ -28,7 +28,9 @@ namespace TDDMoney
 
         public IExpression Times(int multiplier)
         {
-            return new Sum(Augend.Times(multiplier), Addend.Times(multiplier));
+            return Enumerable
+                .Repeat((IExpression)this, multiplier)
+                .Aggregate((x, y) => x.Plus(y));
         }
 
         public IExpression Augend { get; }
