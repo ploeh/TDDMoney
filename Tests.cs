@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using NUnit;
+using NUnit.Framework;
 
 namespace TDDMoney {
   [TestFixture]
