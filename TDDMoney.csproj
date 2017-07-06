@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B98508A5-F331-4F0B-9516-FFA5A2083F50}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TDDMoney</RootNamespace>
     <AssemblyName>TDDMoney</AssemblyName>
@@ -36,12 +36,14 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bank.cs" />
     <Compile Include="CurrencyPair.cs" />
     <Compile Include="IExpression.cs" />
     <Compile Include="Money.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
