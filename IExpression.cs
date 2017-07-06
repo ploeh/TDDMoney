@@ -1,13 +1,13 @@
 ﻿namespace TDDMoney
 {
-    interface IExpression
+    public interface IExpression
     {
         Money Reduce(Bank bank, string to);
         IExpression Plus(IExpression addend);
         IExpression Times(int multiplier);
     }
 
-    class Sum : IExpression
+    public class Sum : IExpression
     {
         public Sum(IExpression augend, IExpression addend)
         {

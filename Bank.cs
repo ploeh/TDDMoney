@@ -2,7 +2,7 @@
 
 namespace TDDMoney
 {
-    class Bank
+    public class Bank
     {
         public Money Reduce(IExpression source, string to)
         {

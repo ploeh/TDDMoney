@@ -1,6 +1,6 @@
 ﻿namespace TDDMoney
 {
-    class Money : IExpression
+    public class Money : IExpression
     {
         public Money(int amount, string currency)
         {

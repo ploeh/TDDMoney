@@ -1,6 +1,6 @@
 ﻿namespace TDDMoney
 {
-    class CurrencyPair
+    public class CurrencyPair
     {
         public CurrencyPair(string from, string to)
         {

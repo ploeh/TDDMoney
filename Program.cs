@@ -1,6 +1,6 @@
 ﻿namespace TDDMoney
 {
-    class Program
+    public class Program
     {
         static void Main() { }
     }
