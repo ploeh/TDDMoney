@@ -16,7 +16,8 @@ namespace TDDMoney
 
         public Money Reduce(Bank bank, string to)
         {
-            int amount = Augend.Reduce(bank, to).Amount + Addend.Reduce(bank, to).Amount;
+            int amount =
+                Augend.Reduce(bank, to).Amount + Addend.Reduce(bank, to).Amount;
             return new Money(amount, to);
         }
 

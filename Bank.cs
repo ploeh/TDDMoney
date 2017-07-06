@@ -20,6 +20,7 @@ namespace TDDMoney
             return rates[new CurrencyPair(from, to)];
         }
 
-        private readonly Dictionary<CurrencyPair, int> rates = new Dictionary<CurrencyPair, int>();
+        private readonly Dictionary<CurrencyPair, int> rates =
+            new Dictionary<CurrencyPair, int>();
     }
 }
