@@ -45,6 +45,7 @@
     <Compile Include="CurrencyPair.cs" />
     <Compile Include="ExpressionEqualityComparer.cs" />
     <Compile Include="ExpressionProperties.cs" />
+    <Compile Include="Expression.cs" />
     <Compile Include="Plus.cs" />
     <Compile Include="IExpression.cs" />
     <Compile Include="Money.cs" />

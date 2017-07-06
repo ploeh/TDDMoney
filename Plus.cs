@@ -21,11 +21,6 @@ namespace TDDMoney
             {
                 return new Money(0, to);
             }
-
-            public IExpression Times(int multiplier)
-            {
-                return this;
-            }
         }
     }
 }

@@ -30,13 +30,6 @@ namespace TDDMoney
                 Currency.GetHashCode();
         }
 
-        public IExpression Times(int multiplier)
-        {
-            return Enumerable
-                .Repeat((IExpression)this, multiplier)
-                .Aggregate((x, y) => x.Plus(y));
-        }
-
         public static Money Dollar(int amount)
         {
             return new Money(amount, "USD");

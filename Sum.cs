@@ -26,13 +26,6 @@ namespace TDDMoney
             return new Sum(this, addend);
         }
 
-        public IExpression Times(int multiplier)
-        {
-            return Enumerable
-                .Repeat((IExpression)this, multiplier)
-                .Aggregate((x, y) => x.Plus(y));
-        }
-
         public IExpression Augend { get; }
         public IExpression Addend { get; }
     }
