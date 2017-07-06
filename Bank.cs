@@ -16,7 +16,9 @@ namespace TDDMoney
 
         public int Rate(string from, string to)
         {
-            if (from == to) return 1;
+            if (from == to)
+                return 1;
+
             return rates[new CurrencyPair(from, to)];
         }
 
