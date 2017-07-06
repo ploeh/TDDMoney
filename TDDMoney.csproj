@@ -44,7 +44,10 @@
     <Compile Include="CurrencyPair.cs" />
     <Compile Include="IExpression.cs" />
     <Compile Include="Money.cs" />
-    <Compile Include="Tests.cs" />
+    <Compile Include="MoneyTests.cs" />
+    <Compile Include="Sum.cs" />
+    <Compile Include="SumTests.cs" />
+    <Compile Include="BankTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
