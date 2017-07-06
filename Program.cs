@@ -1,5 +1,7 @@
-﻿namespace TDDMoney {
-  class Program {
-    static void Main() { }
-  }
+﻿namespace TDDMoney
+{
+    class Program
+    {
+        static void Main() { }
+    }
 }
